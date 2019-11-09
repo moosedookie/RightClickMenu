@@ -1,6 +1,16 @@
 Author: BlueLife ,Velociraptor
 www.sordum.org
 
+@@@@@@@@@@@@@@@@@@@@--ReIcon v1.9--@@@@@@@@@@@@@@@@@@@@
+(Friday 25. September 2018)
+
+- [Fixed] Delete key issue when renaming
+- [Fixed] After clicking restore button,Disable Auto arrange mark doesn't change
+- [Fixed] After update ReIcon version,Restore Icon layout on Right click may use old version
+- [Fixed] A minor Cmd bug
+- [Added] Changing Sort order via drag & Drop
+- [Added] Some code improvements
+
 @@@@@@@@@@@@@@@@@@@@--ReIcon v1.8--@@@@@@@@@@@@@@@@@@@@
 (Friday 12. January 2018)
 
