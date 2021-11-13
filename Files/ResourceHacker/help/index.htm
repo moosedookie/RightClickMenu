@@ -58,9 +58,9 @@
 ... a freeware resource compiler &amp; decompiler for Windows&reg; applications
 </div><br>
 
-<strong>Version 5.1.1</strong><br>
-Last updated: 29 June 2018<br>
-Copyright &copy; 1999-2018 Angus Johnson<br>
+<strong>Version 5.1.8</strong><br>
+Last updated: 14 November 2020<br>
+Copyright &copy; 1999-2020 Angus Johnson<br>
 <span class="maroon">Freeware - no nags, no ads and fully functional.</span><br>
 
 <h3>Overview:</h3>
@@ -118,7 +118,7 @@ Command-line instructions are a combination of switch statements followed by swi
 </tr>
 <tr>
 	<td valign="top">-save</td><td>&nbsp;</td>
-	<td>filename - the new name of the modified or newly created file, either a modified opened file or an extracted resource</td>
+	<td>usually a filename for the new or modified file, but can also be a folder when extracting multiple resources</td>
 </tr>
 <tr>
 	<td valign="top">-resource</td><td>&nbsp;</td>
@@ -183,14 +183,14 @@ reshack_add_icon_to_old.bat:
 <pre>
 rh.exe -open old.exe -save new.exe -action addskip -res my.ico -mask ICONGROUP,MAINICON,</pre><br>
 
-reshack_extract_icon_from_source.bat:
+reshack_extract_all_source_icons_to_icons_folder.bat:
 <pre>
-rh.exe -open source.exe -save icons.ico -action extract -mask ICONGROUP,MAINICON, -log CON
+rh.exe -open source.exe -save .\icons -action extract -mask ICONGROUP,, -log CON
 @pause</pre><br>
 
-reshack_extract_all_icons_from_source.bat:
+reshack_extract_all_dialogs.bat:
 <pre>
-rh.exe -open source.exe -save savedicons.rc -action extract -mask ICONGROUP,, -log rh.log</pre><br>
+rh.exe -open source.exe -save .\dialogs.rc -action extract -mask DIALOG,, -log rh.log</pre><br>
 
 reshack_execute_my_script.bat:
 <pre>
@@ -217,7 +217,7 @@ Resource Hacker Scripts are text files with the following format:<br><br>
   -addoverwrite SourceFile, ResourceMask
   -addoverwrite SourceFile, ResourceMask
   -modify       SourceFile, ResourceMask
-  -extract      TargetFile, ResourceMask
+  -extract      TargetFile or TargetFolder, ResourceMask
   -delete       ResourceMask</pre><br>
 	
 Note: Filenames that include spaces must be enclosed within double quotes.<br><br>
@@ -271,7 +271,7 @@ rh_script_myprog_upd_all.txt -
 
 
 <h3>&quot;Packed&quot; or &quot;Compressed&quot; Executables:</h3>
-Some executable files are &quot;packed&quot; or &quot;compressed&quot; using compression algorithms once they've been compiled. This reduces their file size and it also makes it marginally more difficult to view and modify resources. I suspect this 'hiding' of resources is (or was) the prevailing objective of this process. Consequently, while it's generally not difficult to reverse engineer this 'packing' process too, in deference to these authors, I've chosen not to do this with Resource Hacker. As a side note, &quot;packed&quot; executables have become quite uncommon over the last 5-10 years. A large part of this is because executables are now almost always compressed within installers or ZIP packages. But software authors also seem to be exposing more, rather than less information in their executable files' resource sections. I suspect that earlier concerns about the loss of intellectual property with reversed engineering have finally been allayed.<BR><BR><br>
+Some executable files are "packed" or "compressed" using compression algorithms. Not only does this reduces file size, it also makes viewing and modifying resources marginally more difficult. I suspect that this resource 'hiding' is (or was) a common objective in this process. Anyhow, in deference to these authors, I've chosen not to unpack files with Resource Hacker. As a side note, it seems that "packed" executables have become quite uncommon over the last 5-10 years, and software authors are exposing more rather than less information in executable resources. I suspect that earlier concerns about the loss of intellectual property with reverse engineering have been allayed.<BR><BR><br>
 
 
 <h3>Licence to Use - Terms and Conditions:</h3>
@@ -284,22 +284,6 @@ This Resource Hacker<SUP><FONT SIZE="1">TM</FONT></SUP> software is released as 
 	DISCLAIMER: A user of this Resource Hacker<SUP><FONT SIZE="1">TM</FONT></SUP> software acknowledges that he or she is receiving this software on an "as is" basis and the user is not relying on the accuracy or functionality of the software for any purpose. The user further acknowledges that any use of this software will be at the user's own risk and the copyright owner accepts no responsibility whatsoever arising from the use or application of the software.<br><br>
 	
 The above licence terms constitute "copyright management information" within the meaning of Section 1202 of Title 17 of the United States Code and must not be altered or removed from the licensed works. Their alteration or removal from the licensed works, and the distribution of licensed works without all the above licence terms in an unaltered way, may contravene Section 1202 and give rise civil and/or criminal consequences.<br><br><br>
-
-
-<strong>Changes since version 5.1.0:</strong>
-<ul>
-    <li class="indent">Bugfix:  incorrect editor fonts when displaying multibyte characters
-    <li class="indent">Bugfix:  compiler mishandled hex. escape chars with ambiguous trailing text.    
-    <li class="indent">Bugfix:  incorrect handling of #define directive
-    <li class="indent">Bugfix:  incorrect handling of statusbar alignment in dialog resources
-    <li class="indent">Bugfix:  line numbering broken when swapping between editing and binary views
-    <li class="indent">Bugfix:  relative paths in filenames was broken
-    <li class="indent">Bugfix:  incorrect error reporting while parsing some #include files
-    <li class="indent">Bugfix:  extracting resources using commandline scripts was buggy.
-    <li class="indent">Added:   added support for multi-line comments /* ... */
-    <li class="indent">Updated: can now open and save non-resource type text files
-    <li class="indent">Updated: context help improved     
-</ul><br><br>
 
 </div> </div><!-- outer most formatting-->
 </body>

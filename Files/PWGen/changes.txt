@@ -1,593 +1,170 @@
-﻿                            PWGen for Windows
-                            =================
-                Copyright (c) 2002-2016 by Christian Thöing
+﻿                            Password Tech
+                            =============
+                Copyright (c) 2002-2021 by Christian Thöing
 
 
-Version 2.9.0 (2016-09-09)
-
-NEW FEATURES:
-
-- New option "Specify length" for the "Include words" setting, which allows
-  selecting passphrases with a certain length or length range; if enabled,
-  only passphrases with lengths in the specified range will be displayed or
-  added to the password list
-- Check on start-up if an instance of PWGen is already running; if so, the user
-  is asked to close the instance before starting a new one
-- New option "Change font" in the context menu of the "Quick help" window
-
-CHANGES & IMPROVEMENTS:
-
-- Changed hot keys for profiles (via main menu: File > Profile) from
-  <Ctrl>+<Alt>+... to <Alt>+<Shift>+... in order to avoid ambiguities with the
-  <AltGr> key in Windows, which is frequently used to access special characters
-  on non-English keyboard layouts (<Ctrl>+<Alt> = <AltGr>)
-
-FIXES:
-
-- Password option "Include at least one lower-case letter" did not work for
-  phonetic passwords with mixed-case letters ("<phoneticx>" character set)
-  (setting was ignored)
-
-----------
-
-Version 2.8.0 (2016-04-19)
+Version 3.4.1
 
 NEW FEATURES:
 
-- drag & drop support for the password boxes in the main window and in the "MP
-  Password Generator" dialog, as well as for password lists: a drag & drop
-  operation can be started by left-clicking on the password security bar below
-  the password box and holding the mouse button; in the password list window,
-  text can be directly dragged from the password list itself; the password(s)
-  (or a selection thereof) may be dropped to any application registered as a
-  drop target; conversely, the password boxes can act as drop targets and
-  receive text from other applications
-- new option "Position Automatically" in the "Quick Help" window (available
-  in the context menu of the text box): if activated, the window is positioned
-  below the "Quick Help (?)" button whenever it is made visible (this used to be
-  the default setting); otherwise, the window position will not be changed, and
-  will be saved in the configuration .ini file
+- Command line switch "opendb": Opens password database on startup
+- Command line switch "silent": Launches application in the background (i.e.,
+  without showing main window)
+- Configuration: Option "Launch application on system startup"
+- Password manager: Added "New Entry" button to toolbar
+- Password manager: Autocomplete functionality for "User name" field (suggests
+  user names that already exist in the database)
 
 CHANGES & IMPROVEMENTS:
 
-- update check on start-up is executed in a separate thread (with low priority)
-  rather than in the main thread to avoid latency times for the user
-- new cube-shaped program icon, now also available in "extra large" size
-  (256x256 pixels)
-- activated "auto complete" feature in drop-down boxes in main window
+- Use hardware acceleration for AES if supported by processor
+- Display percentage of maximum entropy (256 bits) in status bar (e.g.,
+  "128 (50%)")
+- Password manager: Improved handling of write-protected files
+- Password manager: Additional icon in toolbar for adding new entry
 
 FIXES:
 
-- in the "Create Trigram File" dialog, clicking on the Browse button ("...")
-  next to the source file box opened a "Save as" dialog rather than an "Open
-  file" dialog
-- fixed some issues concerning the "Always on Top" option
-- "About" window was not sized correctly for higher DPI settings (>96 dpi)
-- profiles deleted by the user were not removed from .ini file if settings were
-  saved during runtime (before exit)
-- fixed fatal error when user attempted to generate passwords with "Format
-  password" checked but empty box
+- Autotype: Added delay of 250ms before sending first character to avoid
+  incomplete typing
+- Password manager: Fixed issues concerning "Expires" field
+- Password manager: Prevent other processes from writing to database file
+  while it is opened in PassCube
 
 ----------
 
-Version 2.7.0 (2015-12-22)
+Version 3.4.0 (2021-07-04)
 
 NEW FEATURES:
 
-- most windows in the program can now be changed in size, settings are stored
-  in the configuration file and are reloaded on start-up
-- for custom character sets ("Include words"), some placeholders may be
-  either spelled in full or abbreviated, such as <base64> = <b64>, <easytoread>
-  = <etr>, <symbols> = <sym>, etc. (see manual for more details)
-- new option "Always on top" in the "Options" menu, which makes PWGen's main
-  window and its subordinate windows the top-most windows on the screen
-- "Provide additional entropy" functionality extended by "From file" option,
-  which allows incorporating entire files into the random pool
+- Password manager: New field "Expires" (including checkbox and calendar for
+  date selection) allows setting an expiry date for the password of a database
+  entry; expired entries are marked with a symbol on the left side of the first
+  column of the list view
+- Password manager: Option "By default, new entries expire after the following
+  number of days" allows setting a default password expiry date for new entries
+- Configuration: Option "Warn if database contains expired entries" displays
+  a message box that allows filtering expired entries in the list view
 
 CHANGES & IMPROVEMENTS:
 
-- "Quick help" windows have been redesigned: text can be selected and copied
-  to the clipboard (Ctrl+C), user can scroll within the window using the
-  mouse wheel
-- "Quick help" button ("?") next to the "Format password" box is displayed
-  constantly, even if the corresponding option is disabled
-- "Multiple passwords" section more detached from other password options by
-  separator line
+- Lua scripting language: Update to version 5.4.3
+- Password database format: Version 1.2
 
 FIXES:
 
-- when PWGen was minimized to the system tray and the MP Password Generator was
-  opened via the system tray popup menu and then closed, the window sometimes
-  reappeared again when restoring the application, but could not be closed
+- Console output did not support Unicode
 
 ----------
 
-Version 2.6.0 (2015-09-02)
+Version 3.3.0 (2020-12-30)
 
 NEW FEATURES:
 
-- new "Advanced" password options "Each character/word must occur only once";
-  for formatted passwords, this option can be activated by specifying an
-  asterisk (*) symbol between the "%" character and the format specifier;
-  e.g., "%*16A" inserts 16 unique alphanumeric characters
-- in formatted passwords, a number range in the form "x-y" can be specified to
-  insert a random number between x and y of random characters from a character
-  set; e.g., "%5-10L" inserts at least 5 and at most 10 random letters
-- new "Provide Additional Entropy" window with a text box where you can enter
-  or paste any text (preferably from volatile, non-static sources containing a
-  certain amount of randomness), which is compressed to roughly estimate its
-  entropy content and then added to the random pool
-- beginning with this version, PWGen will display a checksum of the setup file
-  (PWGen-xxx-setup.exe) in the update notification message box (i.e., when a
-  new version is available)
+- Password manager: Added global database settings "Generate passwords for new
+  entries using format sequence", "Encryption algorithm" (AES or ChaCha20), and
+  "Number of key derivation rounds"
+- Password manager: Key-value list can be edited in a dedicated window, field
+  in edit panel is read-only
+- Password manager: Added configuration parameter "Save automatically" (with
+  options "After adding/modifying an entry" and "After every change")
 
 CHANGES & IMPROVEMENTS:
 
-- "File Encoding" setting moved from "File" menu into "Configuration" dialog
-  (sheet "Files") to make the program settings more consistent
-- maximum number of profiles increased from 36 to 50 (note that the profiles
-  from #37 onwards cannot be loaded via keyboard shortcuts)
-- when the user tests passwords by entering text into the password box in the
-  main window, the security bits value is marked with an asterisk (*) symbol
-  (instead of a change in color)
+- Password manager: Changed scoring system for "fuzzy" search
+- Password manager: Automatically select first search entry
+- Password manager: Search for keyword via hot key: Search is not limited to a
+  single entry anymore (in case there are multiple entries having the same
+  keyword assigned)
+- Password manager: Changed backup feature to support timestamps and consecutive
+  numbering
+- Password entry window: "Remember password" feature only available for text
+  encryption and deterministic random generator (i.e., via Tools | Deterministic
+  Random Generator | Set up)
+- Reduced frequency of "Please donate" messages in "Community" edition
+- Lua scripting language: Update to version 5.4.2
 
 FIXES:
 
-- keyboard shortcuts changed from Ctrl+Shift+<X> (<X> = 0, ..., 9, A, ..., Z)
-  to Ctrl+Alt+<X> (the first combination didn't work properly on Windows 7)
-- allow storing negative window positions in case of multiple monitors (when
-  certain windows were positioned outside the primary screen, they were
-  re-positioned in the center of the primary screen upon restart)
-- in formatted passwords, the security of permuted sequences (via "%N{...%}")
-  was not calculated correctly if N was smaller than the original character
-  sequence within the brackets
-- opening the user manual from the "Help" menu sometimes caused the program to
-  crash
+- Password manager: Copy/paste via Ctrl+C and Ctrl+V within database fields
+  did not work
+- Password manager: "Run" command did not work with certain commands, including
+  more complex commands with arguments
+- Text encryption: Decrypted text encoded as UTF-8 instead of UTF-16
 
 ----------
 
-Version 2.5.4 (2015-03-12)
-
-CHANGES & IMPROVEMENTS:
-
-- generation of unique password lists (i.e., lists where each entry must occur
-  only once; activated by the option "Exclude duplicate entries" in the
-  "Advanced Password Options") has been optimized for speed (at the expense
-  of a roughly doubled memory requirement) and is much faster now even for very
-  large password lists (>1 million entries)
-- when generating password lists to files with the "Exclude duplicates" option
-  activated, checking for duplicates is performed in-memory now instead of
-  searching the entire file contents; as a consequence, the amount of passwords
-  that can be generated in this case is limited by the memory available to a
-  32-bit application like PWGen (... but it's also much faster now)
-  (thanks to Hussein for reporting & valuable suggestions!); note that when the
-  list is appended to an existing file, the file contents will NOT be searched
-  anymore for already existing password entries, i.e., a new unique password
-  list will be appended to the file
-
-FIXES:
-
-- generation of unique password lists didn't work properly for passphrases
-  (composed of words from a word list)
-- fixed a bug in the internal word list ("diceware8k" module), which reduced its
-  effective size to 8191 instead of 8192 words (list contained an empty string
-  due to the faulty encoding of a string in the C source code file); apart from
-  (slightly!) reducing the entropy (12.9998 vs. 13), this empty word reduced the
-  number of words in passphrases when randomly chosen and sometimes caused
-  errors when converting passwords to UTF-8 Unicode encoding
-- "out of memory" errors were not displayed correctly, a cryptic message was
-  shown without the actual information
-
-----------
-
-Version 2.5.3 (2015-02-03)
+Version 3.2.0 (2020-08-05)
 
 NEW FEATURES:
 
-- new character set "<phoneticx>" in addition to "<phonetic>" for generating
-  phonetic passwords consisting of mixed-case letters, i.e., each letter will
-  be either lower-case or upper-case (chosen randomly); this effectively
-  increases the password security by 1.0 bit per character (thanks to Jimmy
-  for the suggestion!)
-
-CHANGES & IMPROVEMENTS:
-
-- when generating phonetic passwords with the options "Include at least one
-  upper-case letter" and "Exclude ambiguous characters" activated, PWGen no
-  longer checks which upper-case letters are not allowed and uses all 26 letters
-  instead (reason: the "Exclude ..." option is not supposed to be effective
-  for phonetic passwords)
-- internal change: "Advanced password options" (which can be TRUE or FALSE)
-  are stored as "bit masks" (integer values) instead of strings of 0s and 1s
-
-----------
-
-Version 2.5.2 (2014-11-13)
-
-FIXES:
-
-- random data files contained terminating non-random zeros (max. 15 bytes) if
-  file size was not a multiple of 16 bytes (e.g., if file size was 100 bytes,
-  the last 4 bytes (= 100 - 6*16) were zeros) (thanks to Glen for reporting!)
-
-----------
-
-Version 2.5.1 (2014-11-06)
-
-CHANGES & IMPROVEMENTS:
-
-- PWGen can now be run in "installation" or "portable" mode, meaning that the
-  configuration file (PWGen.ini) is stored either in the user-specific
-  %APPDATA% folder or in the program folder (i.e., the folder where PWGen.exe
-  is located); mode is controlled via the "UseAppDataPath" flag in the PWGen.ini
-  file in the program folder, flag is set to 1 (TRUE, installation mode) during
-  setup, but is 0 (FALSE, portable mode) by default
-- further minor changes
-
-FIXES:
-
-- window "Create Random Data File" was not accessible, selecting the
-  corresponding menu item opened the configuration window instead
-
-----------
-
-Version 2.5.0 (2014-10-09)
-
-NEW FEATURES:
-
-- new "Configuration" dialog allows changing the main configuration of the
-  program within one window; dialog can be opened by clicking on the new "tools"
-  button in the toolbar or via the main menu, i.e., Options / Configuration;
-  several options which have previously been accessible via the "Options" menu
-  have been moved to this window: GUI font selection, options concerning the
-  system tray, and "hot key" settings
-- new option "Clear clipboard automatically": if it is activated, the clipboard
-  will be cleared automatically after a certain time (e.g., 10 seconds) whenever
-  the user copies generated passwords to the clipboard
-- new option "Automatic check for updates": enables automatic checks on start-up
-  at regular intervals (i.e., daily, weekly, or monthly); you can also disable
-  this option and manually check for updates (via Help / Check for Updates)
-- new "Advanced" password option "Only include characters from custom character
-  set": this option refers to the "Include at least one ..." (letter/digit/
-  special symbol) options and means that if the latter options are activated,
-  only characters (letters/digits/special symbols) from the user-defined
-  (custom) character set will be included in the generated passwords; for
-  example, if the custom set is "abcdEFGH" and the option "Include at least
-  one lower-case letter" as well as the new option are activated, passwords
-  will contain at least one lower-case letter from the set "abcd"
-- new option "Encrypt & Copy" in the context menu of password boxes: encrypts
-  the selected text and copies the ciphertext to the clipboard---no need to copy
-  the plaintext to the clipboard first before calling the "Encrypt clipboard"
-  function
-
-CHANGES & IMPROVEMENTS:
-
-- button for "Create random data file" has been removed to make room for the
-  new "tools" button (see above)
-- the caption of the "Advanced" button in the main window is now marked with
-  "(!)" when the user has selected options which could potentially reduce the
-  security of passwords
-
-FIXES:
-
-- fatal error occurred when PWGen was started minimized and the icon in the
-  system tray was right-clicked for the first time (thanks to Emil for
-  reporting!)
-
-----------
-
-Version 2.4.0 (2013-12-14)
-
-NEW FEATURES:
-
-- new "password hasher" functionality, called "MP Password Generator"
-  (MP = Master Password); accessible via the "Tools" item in the main menu
-  or via the "magic hat" icon in the toolbar, the MPPG allows you to
-  reproducibly generate unique passwords based on a secret master password and
-  a parameter string, such as the name of the website account, etc.; it also
-  provides a compatibility option for the online password hasher "Hashapass"
-  (www.hashapass.com), intended for users who want to be independent of a
-  Windows-based application
-- the "deterministic" random generator from the MP Password Generator (see
-  above) can be set as PWGen's default random generator, thus making password
-  generation (and generation of random data files) in the main window fully
-  reproducible; but see important notes in the manual!
-- upon selecting certain functions (e.g., when clearing the clipboard) a small
-  yellow info box is shown in the center of the main window to give the user
-  a succinct feedback for the action
-
-CHANGES & IMPROVEMENTS:
-
-- "exit" button in the toolbar has been removed to make room for the new
-  "magic hat" button; quick exit can be accomplished by pressing Alt+Q
-
-FIXES:
-
-- fixed incorrect comparison between newer and older versions of PWGen
-
-----------
-
-Version 2.3.1 (2013-09-16)
-
-FIXES:
-
-- fixed a few bugs related to Unicode (some Unicode strings were erroneously
-  converted to ANSI, resulting in strings containing "?" on systems with a
-  codepage setting incompatible to the selected language)
-
-----------
-
-Version 2.3.0 (2013-09-08)
-
-NEW FEATURES:
-
-- full Unicode support throughout the entire application: passwords,
-  translations, file names, word lists, text encryption, i.e., PWGen should be
-  capable now of handling all theoretically possible 1,114,112 Unicode
-  characters; yet PWGen should still run on Windows versions which are mostly
-  ANSI-based (Windows 9x/Me)
-- variable file encoding: PWGen is capable of reading and writing Unicode text
-  files encoded as UTF-16 little-/big-endian, UTF-8 and (non-Unicode) ANSI
-  (as identified by the byte-order mark at the beginning of the file); the
-  desired encoding for writing Unicode text may be changed in the main menu
-  via File / File Encoding
-- generate phonetic (pronounceable) passwords: this feature has been residing
-  on my infamous to-do list for a long, long time, but has now been realized,
-  at last! phonetic passwords are based upon language-specific frequencies of
-  trigrams (i.e., 3-letter combinations such as ing, riv, ...) (English by
-  default) and can be activated by entering "<phonetic>" into the "Character
-  set" field or using the format specifier %q in the "Format password" field;
-  phonetic passwords generated with the default trigram table offer ~3.6 bits
-  of entropy per letter
-- create "trigram files" for generating phonetic passwords (via main menu:
-  Tools > Create Trigram File): this is particularly useful for other languages
-  which have Latin-derived alphabets; the user can specify any text file (e.g.,
-  dictionary or word list), which is then analyzed by PWGen with respect to the
-  frequencies of trigrams, and the resulting trigram table is written to a
-  "trigram file", which can be loaded by PWGen in the "Advanced Password
-  Options" dialog
-- when generating password lists to a file, passwords may be appended to the
-  file in case it already exists
-- check for updates (main menu: Help > Check for Updates): PWGen checks via the
-  Internet if a new version is available; if so, the user may be directed to the
-  download page of the new version
-- the font which is used to display most of the strings in the GUI can be
-  changed via Options / Change Font
-
-CHANGES & IMPROVEMENTS:
-
-- the format of text encryption has been changed again to provide Unicode
-  support (for texts AND passwords), but PWGen is still capable of decrypting
-  ciphertexts which were created with an older 2.x version
-
-----------
-
-Version 2.2.1 (2013-03-01)
-
-FIXES:
-
-- clicking on the main window (area around the border of group boxes)
-  erroneously called a function that loaded a password generation profile,
-  which caused an error if the profile list was empty
-  (thanks to Cliff for reporting!)
-
-----------
-
-Version 2.2.0 (2013-02-27)
-
-NEW FEATURES:
-
-- password settings can be stored now as "profiles": to load, create or delete
-  profiles, select File > Profile > ... in the main menu, or click F10 to show
-  the profile editor
-- new hot key options: PWGen can be associated with a "hot key" (special key
-  combination), which allows for quickly generating passwords, for example
-- new "advanced" password option "Reverse default order of character/word
-  combinations" (see manual for more details)
-- new "Generate" button (symbol next to the button for generating multiple
-  passwords): enables writing the generated passwords directly to a file
-  instead of displaying them in a window; process is independent of any
-  RAM restrictions and practically only limited by free disk space
-
-CHANGES & IMPROVEMENTS:
-
-- speed of password list generation increased significantly, particularly when
-  duplicate entries are to be excluded
-- memory usage for password list generation improved (i.e., lower memory
-  requirements)
-- max. number of passwords in password lists increased to 2,000,000,000
-- max. size of password lists increased to 500,000,000 bytes
-- max. number of words in word lists increased to 1,048,576 (corresponding to
-  20 bits of entropy per word)
-- "footnotes" in the "Advanced Password Options" dialog changed in order to
-  clarify for which kinds of passwords (pass*words*, pass*phrases* or formatted
-  passwords) each option refers to
-- random pool uses HMAC-SHA-256 instead of plain SHA-256 now (HMAC has
-  allegedly better randomness extraction properties)
-
-FIXES:
-
-- character set was not updated correctly in some cases
-
-----------
-
-Version 2.1.0 (2012-11-12)
-
-NEW FEATURES:
-
-- new option "Format Password": allows you to fully customize the passwords
-  by providing a pattern-based generation using placeholders (for inserting
-  characters from various character sets) and other format specifiers (e.g.,
-  for permuting character sequences)
-- introduction of command line switches
-- ambiguous characters may be provided in groups of similar-looking characters
-  (e.g., "B8 G6 I1l| 0OQD S5 Z2")
-- new "Advanced" option "Convert all words in word lists to lower-case"
-- word lists are loaded automatically
-- new "quick help" buttons for character set & word list box
-- new option "Enabled Password Testing" in context menu of password box:
-  enables the user to manipulate the contents of the box and let PWGen
-  estimate the security of the entered sequence
-- new "password quality bar" below the password box: length & color of the bar
-  signify security of the generated password (the longer & greener, the better)
-- random seed file is created/overwritten in order to preserve entropy
-  collected during runtime
-
-CHANGES & IMPROVEMENTS:
-
-- function "Generate Password" in the context menu of the PWGen system tray
-  icon can generate all kinds of passwords now (i.e., not limited to characters
-  any more)
-- text encryption scheme changed: HMAC of the plaintext (instead of the
-  ciphertext) is generated, full 256 bits of HMAC-SHA-256 are used; an encrypted
-  4-byte identification string serves to quickly check the key without having to
-  compute the full HMAC; these changes allow for using other encryption
-  algorithms besides AES in future versions
-- backwards compatibility for old encryption scheme (PWGen <2.1.0) is provided
-  in the password dialog by a checkbox
-- random pool design changed (security increased)
-- design of the random pool progress bar (and of other elements) changed
-- version numbering changed: x.yz (old) -> x.y.z (new)
-
-FIXES:
-
-- minor fixes, but lots of internal changes in the code
-
-----------
-
-Version 2.08 (2012-03-17)
-  - new "Create Random Data File" dialog: should be more convenient than the
-    handling before
-  - font of the generated password in the main window can be changed now
-    ("Change Font" option accessible in the context menu of the box);
-    problem was that the font "Fixedsys", which was used as fixed default
-    before, could not display characters like the "Euro" symbol (€)
-  - some obligatory bug fixes, code cleanup, ...
-
-----------
-
-Version 2.07 (2011-11-11)
-  - improved handling of character sets: the user doesn't have to update the
-    character set by clicking on a button any more; now the set is automatically
-    updated as soon as possible without showing any message boxes
-  - new "About" box design
-  - some bug fixes etc.
-
-----------
-
-Version 2.06 (2011-02-10)
-  - new option "Exclude duplicate entries in password lists" in the "Advanced
-    Password Options" dialog: this option allows you to create unique lists
-    in which each password entry occurs only once
-  - maximum size of password lists has been extended to 1,000,000
-  - generation of password lists runs much faster now
-  - it is possible to cancel potentially time-consuming operations (generation
-    of password lists and random data files) now, and their progress can be
-    watched
-
-----------
-
-Version 2.05 (2010-09-23)
-  - bugfix: using hotkeys (Ctrl+C, Ctrl+V, Del, etc.) in the "character set" and
-    "word list file name" input boxes caused the program to crash (fatal error:
-    access violation); thanks to bitarisu for reporting this bug
-  - PWGen has a main menu now where the most important settings and tools can be
-    accessed; the "Options" button was removed and replaced by an "Options" item
-    in the main menu
-  - toolbar buttons were provided with larger (and fancier) icons
-  - option "maximum word length in word lists" moved to the "Advanced Password
-    Options" dialog (value can be varied using the up/down buttons)
-  - available languages are displayed with their version numbers now
-    (e.g. "Deutsch (v2.05)")
-  - some other minor changes and code cleanup
-
-----------
-
-Version 2.04 (2010-06-27)
-  - new options "Redefine ambiguous characters" and "Redefine special symbols"
-    in the "Advanced Password Options" dialog: these options allow the user
-    to overwrite the default settings for the ambiguous characters and the
-    character set of special symbols; the latter one is used for the pre-defined
-    character set <symbols> and for the password option "Include at least one
-    special symbol"
-  - it is possible now to insert a comment at the beginning of the character
-    set: the comment must be included in square brackets [comment] and will be
-    ignored when the character set is loaded
-  - the lists holding the character set and the word list file names,
-    respectively, may contain up to 50 entries now; furthermore, it's possible
-    to clear the lists via the popup menu (or by pressing Ctrl+Q)
-
-----------
-
-Version 2.03 (2009-11-04)
-  - field for entering a word list file has been transformed into a list box
-    that is capable of holding up to 16 entries (similar to the list box
-    holding the character sets)
-  - new option "Exclude repeating consecutive characters" in the "Advanced
-    Password Options" dialog: this option ensures that every character in a
-    password is different from the previous one (that is, sequences like "aa" or
-    "11" in a password will be prevented)
-  - minor changes in the program code
-
-----------
-
-Version 2.02 (2009-05-28)
-  - new options in the "Advanced Password Options" dialog: the user can now
-    force PWGen to include at least one upper-case/lower-case letter, digit
-    or special symbol in the password
-  - changed function "Generate and Show Password" (system tray menu):
-    the message box has three buttons now (Yes, No and Cancel); "Yes" copies the
-    password to the clipboard, "No" generates a new password, "Cancel" cancels
-    the process
-  - language version is now checked for compatibility
-  - bugfix: if the word list size was not a power of 2, the generation algorithm
-    sometimes delivered less words than specified (luckily, the default word 
-    list and the lists included in the PWGen package all contain 8192 [= 2^13]
-    words, so there was no problem when using one of these lists)
-
-----------
+- Native 64-bit version available
+- Password manager: New "Tags" field in password databases allows assigning
+  multiple tags to entries, which can be filtered via the tag list control on
+  top of the list of database entries
+- Option "Ask before exiting application" asks for confirmation via a message
+  box before exiting
+- Option "Clear password box automatically" automatically clears the password
+  box in the main window after a certain time
   
-Version 2.01 (2008-09-29)
-  - new "Advanced Password Options" dialog accessible via the main window
-    (button "Advanced"): in this dialog, the user can activate or deactivate
-    various options regarding password generation; for example, it is possible
-    now to generally exclude ambiguous characters (like B8I1O0...) from
-    character sets
-  - new pre-defined character sets <symbols> and <easytoread>; <symbols>
-    defines special symbols accessible via the keyboard, whereas <easytoread>
-    is equal to <AZ><az><09>, but without ambiguous characters
-  - menu item "open documentation" has been replaced by a button in the
-    main window
-  - some minor changes and code cleanup...
+CHANGES & IMPROVEMENTS:
+
+- Create random data files: Allow file sizes up to 10 terabytes
+  
+FIXES:
+
+- Several placeholders for character sets ("Include characters" option) not
+  functional
+- File extension filters in open/save dialogs not available in English version
+- Password manager: Dropping dragged entry on "<New Entry>" item caused fatal
+  error
+- Missing translations in German.lng
 
 ----------
 
-Version 2.00 (2008-04-24)
-  - PWGen has been completely revised: new, more user-friendly and intuitive
-    GUI, almost completely new program code
-  - password generation follows a completely different design compared to
-    PWGen 1.x
-  - possibility to create large amounts of passwords (up to 32,767)
-  - new random pool design: fast, lean and secure; SHA-256 is used to "distil"
-    randomness from entropy data, AES functions as CSPRNG
-  - maximum pool entropy reduced to 256 bits (more isn't really necessary!)
-  - better entropy gathering: the program constantly collects entropy from
-    keystrokes, mouse clicks and mouse movements (as well as entropy from
-    system-specific parameters)
-  - better text encryption: PWGen compresses the text now before encrypting it
-    in CBC mode; key crunching is performed 8192 times to protect against
-    dictionary attacks; this encryption scheme is NOT compatible to that
-    used in PWGen 1.x!
-  - new language interface: every language has its own file containing the
-    English messages and their translations
-  - more flexible handling of word lists: list size may range from minimum 2
-    to maximum 65,536 words, and words may be separated by spaces, tabulators
-    or line breaks (so in effect *any* kind of text file can be used, as long
-    as it contains "words" not longer than 30 characters); furthermore, the
-    maximum word length allowed in the list can be modified by the user
-  - "Windows XP style" of the GUI
-  - and much, much more!
+Version 3.1.0 (2020-06-14)
+
+NEW FEATURES:
+
+- Multilingual support (note: Translation Utility has also been relaunched)
+- Allow comments preceding the file name in file name lists ("Include words"
+  and "Run script"), e.g. "[My word list]C:\Users\user\Documents\mylist.txt"
+- Password manager: "Fuzzy" (approximate) search ("zZ" button in toolbar)
+- Password manager: Rearrange entries ("Edit" menu and context menu of list)
+- Password manager: Allow changing password font ("View" menu)
+
+CHANGES & IMPROVEMENTS:
+
+- "Specify length" option for passphrases: Length specification now refers
+  to the net length of the passphrase (i.e., only counting characters from
+  words and not from the previous "Include characters" option); an asterisk (*)
+  can be specified somewhere in the sequence to count all characters (e.g.,
+  "10-20*", "*>15")
+- Password manager: When creating or opening a database, wait until file name
+  has been selected and/or password has been entered before closing the
+  currently opened database
+- Password manager: Allow access to "File" menu when editing an entry
+- Password manager: "View | Sort Order" options moved to "View | Sort By" menu
+  
+FIXES:
+
+- Wait for running threads to finish upon exit
+- Fixed issues related to "Always on Top" feature
+- Password manager: Sort options not loaded from configuration on startup
+- Password manager: Key-value string not copied when duplicating entry
 
 ----------
 
-Please refer to the older versions of PWGen for the changes in PWGen 1.x!
+Version 3.0.0 (2020-05-05)
+
+- Relaunched "PWGen for Windows" as "Password Tech" (PwTech) with lots of
+  new features, including password safe/manager and password generation with
+  Lua scripts
+
+NOTE: Multilingual support is currently not available. It will be added in a
+future release.
+
+----------
+
+Please refer to older versions of the predecessor "PWGen for Windows" for the
+changes in PWGen 1.x and 2.x!
