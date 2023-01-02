@@ -1,6 +1,13 @@
 Author: BlueLife, Velociraptor
 www.sordum.org
 
+########################--Backup Start Menu Layout  v1.6 --########################
+
+Thursday, September 22, 2022
+-----------------------
+[FIXED] – Error: Reg file could not be created
+[Added] – Some code Improvements
+
 ########################--Backup Start Menu Layout  v1.5 --########################
 
 Thursday, 7 October 2021

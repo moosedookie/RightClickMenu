@@ -1,13 +1,20 @@
 Author: BlueLife, Velociraptor
 www.sordum.org
 
+####################--Defender Control v2.1--####################
+
+Tuesday, March 1, 2022
+
+1. [Added] – Different blocking method
+2. [Added] – Some code improvements
+
 ####################--Defender Control v2.0--####################
 
 Monday, 13 September 2021
 1. [Removed] – Cmd parameter support (Defender control is using inside some malware)
 2. [Fixed] – Defender Control Doesn't work on Windows 11 
 3. [Fixed] – Error occurs when turning off Windows Defender
-4. [Added] – Some code improvemen
+4. [Added] – Some code improvements
 
 ####################--Defender Control v1.9--####################
 

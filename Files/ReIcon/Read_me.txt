@@ -1,6 +1,16 @@
 Author: BlueLife ,Velociraptor
 www.sordum.org
 
+@@@@@@@@@@@@@@@@@@@@--ReIcon v2.0--@@@@@@@@@@@@@@@@@@@@
+(Tuesday 15. March 2022)
+
+- [Added] New options for System Tray menu
+- [Added] Option to update the previously saved backup from the list
+- [Added] some new options under the Options menu
+- [Added] More than 1 restore option has been added to the right-click menu 
+(The ContextMenuRestoreCount value in the ini file can be changed from 1 to 6)
+- [Added] Many improvements have been made in coding
+
 @@@@@@@@@@@@@@@@@@@@--ReIcon v1.9--@@@@@@@@@@@@@@@@@@@@
 (Friday 25. September 2018)
 

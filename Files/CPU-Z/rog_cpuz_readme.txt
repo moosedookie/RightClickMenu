@@ -1,8 +1,8 @@
 ROG CPU-Z Readme file
 ----------------------
 
-Version 1.97
-September 2021
+Version 2.03
+October 2022
 Contact : cpuz@cpuid.com
 Web page: https://www.cpuid.com/softwares/cpu-z.html
 Validation page : https://valid.x86.fr/
@@ -84,6 +84,65 @@ The cache latency tool can be downloaded at that address : http://download.cpuid
 
 History
 -------
+--------------------------------------------------------------------------------------------------
+2.03 - October 2022
+- Intel Core i9-13900/K/F/KF, Core i7-13700/K/F/KF, Core i5-13600/K/F/KF, Core i5-13500, Core i5-13400 and Core i3-13100.
+- Intel ARC A770, A750, A580 (ACM-G10) and A380 (ACM-G11) GPUs.
+- Support for multipliers > 64x on AMD Ryzen 7000.
+- Preliminary support for NVIDIA RTX 4000 GPUs.
+
+--------------------------------------------------------------------------------------------------
+2.02 - August 2022
+- AMD X670E/B650 chipsets.
+- AMD Radeon RX 6950 XT (Navi 21 KXTX), RX 6750 XT (Navi 22 KXT), RX 6650 XT (Navi 23 KXT) and RX 6400 (Navi 24 XL).
+- Preliminary support of AMD EXPO memory overclocking profiles.
+- Intel Z790 platform.
+
+--------------------------------------------------------------------------------------------------
+2.01 - April 2022
+- Glenfly Arise-GT10C0 GPU.
+- Intel Core i9-12900T, Core i5-12600T (35W).
+- Intel Atom x6427FE, x6425RE, x6425E, x6414RE, x6413E, x6212RE, x6211E, x6200FE (Elkhart Lake, FCBGA1493).
+- Intel Pentium J6425, N6415 (Elkhart Lake, FCBGA1493).
+- Intel Celeron J6413, N6211 (Elkhart Lake, FCBGA1493).
+- Preliminary support for Intel ARC 3/5/7 (DG2).
+- Preliminary support for Intel Raptor Lake (13th gen).
+- AMD Ryzen 7 5700X, Ryzen 5 5600/5500.
+- AMD Ryzen 3 5300GE, Ryzen 3 PRO 5350GE, Ryzen 5 PRO 5650GE, Ryzen 7 PRO 5750GE (Cezanne).
+- AMD Ryzen 9 6980HX, 6900HX, Ryzen 7 6800H, Ryzen 5 6600H (45W).
+- AMD Ryzen 9 6980HS, 6900HS, Ryzen 7 6800HS, Ryzen 5 6600HS (35W).
+- AMD Ryzen 7 6800U, Ryzen 5 6600U (15-28W).
+- AMD Ryzen 7 5825U, Ryzen 5 5625U, Ryzen 3 5425U (15W).
+- AMD Rembrandt & Raphael APUs (RDNA2).
+- AMD Mendocino APU (Zen2 + RDNA2).
+- AMD Radeon RX 6850M XT GPU (NAVI22).
+- AMD RX 6800S, RX 6700S, RX 6650M, RX 6650M XT GPUs (NAVI23).
+- NVIDIA GeForce RTX 3090 Ti GPU (GA102-350, 450W).
+- Improved information accuracy when core isolation is enabled.
+- Improved validation process for high clock submissions (>6GHz).
+
+--------------------------------------------------------------------------------------------------
+2.00 - March 2022
+- Intel Core i9 12900KS.
+- Intel Core i7-1280P/1270P/1260P, Core i5-1250P/1240P, Core i3-1220P (28W).
+- Intel Core i7-1265U/1255U, Core i5 1245U/1235U, Core i3 1215U (15W).
+- Intel Core i7-1260U/1250U, Core i5 1240U/1230U, Core i3 1210U (9W).
+- Intel Pentium 8505, Celeron 7305 (15W).
+- Intel Pentium 8500, Celeron 7300 (9W).
+- AMD Ryzen 7 5800X3D.
+- AMD Radeon RX 6500 XT.
+- Preliminary support of AMD Ryzen 6000 "Rembrandt" APUs.
+
+--------------------------------------------------------------------------------------------------
+1.99 - January 2022
+- Intel Core i5 12700H, 12500, 12400, Core i3 12300, 12100 CPUs.
+- AMD CCD/CCX topology bug fix.
+- AMX instruction set support.
+- AMD 4700S processor.
+- Improved validation process for Alder Lake records.
+- Improved support for AMD Cezanne 5600G/5700G APUs.
+- Improved DDR5 SPD information report.
+
 --------------------------------------------------------------------------------------------------
 1.97 - September 2021
 - Intel Core i9 12900K, Core i7 12700K and Core i5 12600K "Alder Lake" CPUs and Intel Z6xx platform.
