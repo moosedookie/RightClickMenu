@@ -1,0 +1,1 @@
+"Workstation", "Server" | %{ Restart-Service $_ }
