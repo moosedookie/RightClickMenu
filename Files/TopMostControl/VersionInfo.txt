@@ -1,0 +1,38 @@
+Author: BlueLife
+www.sordum.org
+
+#################### Window TopMost Control v1.3 #################### 
+Monday, 2 January, 2023
+
+Changelog:
+
+1. [ ADDED ] – Remove All Windows On Top feature
+2. [ ADDED ] – Remove “always on top” feature from all windows ( /D parameter )
+3. [ ADDED ] – Class control for automatic "OnTop" feature (To avoid problems in windows belonging to different program with the same name)
+4. [ ADDED ] – High contrast support
+5. [ ADDED ] – Some code Improvements
+
+####################  Window TopMost Control v1.2 #################### 
+Tuesday, February 11th, 2020
+
+Changelog:
+
+1. [ ADDED ] – Topmost settings can be saved and applied after restart
+2. [ ADDED ] – Option to create a shortcut to the desktop and startup
+3. [ ADDED ] – Option to change keyboard shortcut
+4. [ ADDED ] – x64 version
+
+####################  Window TopMost Control v1.1 #################### 
+Wednesday, 17 July 2019
+
+Changelog:
+
+1. [ FIXED ] – Windows TopMost Control need Admin privileges to run
+2. [ ADDED ] – CMD parameter support
+
+
+####################  Window TopMost Control v1.0 #################### 
+
+Thursday, 4 June 2015
+
+Window TopMost Control is a simple portable Freeware to Allow users to set Topmost Some Windows Applications which doesn’t offer an option to make itself topmost
