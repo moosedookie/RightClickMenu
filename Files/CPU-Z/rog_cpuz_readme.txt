@@ -1,13 +1,13 @@
 ROG CPU-Z Readme file
 ----------------------
 
-Version 2.03
-October 2022
+Version 2.11.1
+October 2024
 Contact : cpuz@cpuid.com
 Web page: https://www.cpuid.com/softwares/cpu-z.html
 Validation page : https://valid.x86.fr/
 Hall of Fame : https://valid.x86.fr/records.php
-CPUID SDK : http://www.cpuid-pro.com/products-services.php
+CPUID SDK : https://www.cpuid-pro.com/products-services.php
 
 
 Configuration file (cpuz.ini)
@@ -68,6 +68,7 @@ in the same directory as the exe file.
 
 -bench : runs CPU-Z without interface, runs the benchmark, and saves the result in a TXT file named like the machine.
 
+
 Keys
 ----
 
@@ -76,16 +77,89 @@ F6 : save the current tab in the clipboard
 F7 : save cvf file in the current directory
 
 
-Cache Latency Tool
-------------------
-
-The cache latency tool can be downloaded at that address : http://download.cpuid.com/misc/latency.zip
-
-
 History
 -------
 --------------------------------------------------------------------------------------------------
-2.03 - October 2022
+2.11.1 - October 2024
+- Fixes ARL memory timings (2.11.1).
+- Adds microcode revision report in Mainboard tab / BIOS.
+- Improved support of AMD Strix Point (including GPU).
+- AMD Granite Ridge/Strix Point memory p-states.
+- Improved support of Intel Arrow Lake clock multiplier granularity.
+- Intel Core Ultra 5 235, 225 & 225F (Arrow Lake).
+- Intel Core i9 14901KE & 14901E, Core i7 14701KE, Core i5 14501E & 14401E/F (Raptor Lake).
+
+--------------------------------------------------------------------------------------------------
+2.10 - July 2024
+- AMD Ryzen 9 9950X (16C/32T), 9900X (12C/24T), Ryzen 7 9700X (8C/16T) and Ryzen 5 9600X (6C/12T) Granite Ridge (Zen 5).
+- AMD Ryzen AI 9 HX 375 (4x Zen 5 + 8x Zen 5c), Ryzen AI 9 365 (4x Zen 5 + 6x Zen 5c) Strix Point APUs.
+- AMD Ryzen 9 8945H, Ryzen 7 8845HS (Hawk Point).
+- Intel Core Ultra 9 285K & 275, Core Ultra 7 265K & 255, Core Ultra 5 245K & 240 (Arrow Lake). 
+- Intel Core Ultra 9 288V ; Ultra 7 268V, 266V, 258V, 256V ; Ultra 5 236V, 228V, 2266V (Lunar Lake).
+- AMD Radeon RX 7600 XT (Navi 33 XT).
+
+--------------------------------------------------------------------------------------------------
+2.09.1 - March 2024
+- Improved support of Intel Meteor Lake and preliminary support of Arrow Lake.
+- AMD Ryzen 9 8945H, Ryzen 7 8845HS (Hawk Point).
+- AMD Hawk Point and Hawk Point 2 (Zen 4/Zen 4c).
+- AMD Radeon RX 7900 GRE (Navi 31 XL), Radeon RX 7600 XT (Navi 33 XT)
+- NVIDIA RTX 4070 SUPER (AD104-350), RTX 4070 Ti SUPER (AD103-275), RTX 4080 SUPER (AD103-400).
+- The benchmark can now be ran on a single coreset/cluster.
+
+--------------------------------------------------------------------------------------------------
+2.08.4 - December 2023
+- Support of Intel Core 3, 5, 7 and Core Ultra 5, 7, 9 new branding.
+- Improved support of Intel Meteor Lake.
+- Intel Core i9-14900K/KF (24c), Core i7-14700K/KF (20c),  Core i5-14600K/KF (14c).
+- Intel Core i5 14400F, 14400T, 14400, 14500 and 14500T.
+- Intel Core i3 14100F, 14100T and 14100.
+- Intel 300 and 300T processors (RPL, 2c, 65/35W).
+- AMD Threadripper PRO 7995WX (STP, 96c), 7985WX (STP, 64c), 7975WX (STP, 32c), 7955WX (STP, 16c) and 7945WX (STP).
+- Preliminary support for AMD EPYC Bergamo.
+- AMD Radeon RX 7800 XT and 7700 XT (Navi 32).
+
+--------------------------------------------------------------------------------------------------
+2.06.1 - June 2023
+- AMD Ryzen Z1 and Z1 Extreme (2.06.1).
+- AMD Ryzen 9 7940H & HS, Ryzen 7 7840HS (2.06.1).
+- Fixed AMD EPYC Milan reported as Genoa (2.06.1).
+- Intel Core i9 13980HX, 13900HX, 13900HK (2.06.1).
+- Intel Core i7 13700H, 13650HX (2.06.1).
+- Intel Core i5 13500HX, 13420H (2.06.1).
+- Intel N97, N95 and N50 (ADL-N, 6W to 15W).
+- AMD Dragon Range Ryzen 9 7945HX (16c/55-75W), 7845HX (12c/45-75W), Ryzen 7 7745HX (8c/45-75W), 7645HX (6c/45-75W).
+- Zhaoxin C-1080 IGP (KX-6000G).
+- Zhaoxin KH-40000 YongFeng (12/16/32c).
+- NVIDIA RTX 4070 (AD104-250).
+- NVIDIA RTX 4060 Ti (AD106-350).
+- AMD Radeon RX 7600 (Navi 33 XL).
+
+--------------------------------------------------------------------------------------------------
+2.05.1 - March 2023
+- Fix RTX 4090/4080/4070 detection bug (2.05.1).
+- Fix DMI crash bug (2.05.1).
+- Intel Xeon Sapphire Rapids platform.
+- Preliminary support for AMD Storm Peak platform.
+- Zhaoxin KX-6000G/4 CPU.
+
+--------------------------------------------------------------------------------------------------
+2.04 - January 2023
+- Intel N100 and N200 (ADL-N).
+- intel Core i3 N300 and N305 (ADL-N).
+- Intel Core i5 13450HX, 13500HX, Core i7 13650HX, 13700HX (55W).
+- Intel Core i9 13900KS.
+- AMD Ryzen 9 7950X3D, 7900X3D, Ryzen 7 7800X3D.
+- AMD Ryzen 9 7900, Ryzen 7 7700, Ryzen 5 7600 (RPL, 65W).
+- AMD Athlon Gold 7220U, Ryzen 3 7320U, Ryzen 5 7520U (MDN-A0, 15W).
+- AMD Radeon RX 7900XT/XTX.
+- NVIDIA RTX 4080 16GB (AD103).
+- NVIDIA RTX 4070 Ti (AD104).
+
+--------------------------------------------------------------------------------------------------
+2.03.1 - November 2022
+- Intel Core i9 13900HK, Core i7 13700H/HX, 13650HX, 13620H, Core i5 13500H/HX, 13450HX, 13420H (2.03.1).
+- Intel Celeron 7305 (2.03.1).
 - Intel Core i9-13900/K/F/KF, Core i7-13700/K/F/KF, Core i5-13600/K/F/KF, Core i5-13500, Core i5-13400 and Core i3-13100.
 - Intel ARC A770, A750, A580 (ACM-G10) and A380 (ACM-G11) GPUs.
 - Support for multipliers > 64x on AMD Ryzen 7000.
@@ -93,10 +167,12 @@ History
 
 --------------------------------------------------------------------------------------------------
 2.02 - August 2022
+- AMD Ryzen 9 7950X, Ryzen 9 7900X, Ryzen 7 7700X, Ryzen 5 7600X.
 - AMD X670E/B650 chipsets.
 - AMD Radeon RX 6950 XT (Navi 21 KXTX), RX 6750 XT (Navi 22 KXT), RX 6650 XT (Navi 23 KXT) and RX 6400 (Navi 24 XL).
 - Preliminary support of AMD EXPO memory overclocking profiles.
 - Intel Z790 platform.
+- Intel Xeon Platinum, Gold and Silver "Ice Lake-SP" (10nm, FCLGA4189).
 
 --------------------------------------------------------------------------------------------------
 2.01 - April 2022
@@ -135,23 +211,26 @@ History
 
 --------------------------------------------------------------------------------------------------
 1.99 - January 2022
-- Intel Core i5 12700H, 12500, 12400, Core i3 12300, 12100 CPUs.
-- AMD CCD/CCX topology bug fix.
-- AMX instruction set support.
-- AMD 4700S processor.
-- Improved validation process for Alder Lake records.
-- Improved support for AMD Cezanne 5600G/5700G APUs.
+- Intel Core i5 12500, 12400, Core i3 12300, 12100 CPUs.
 - Improved DDR5 SPD information report.
+- AMD CCD/CCX topology bug fix.
 
 --------------------------------------------------------------------------------------------------
-1.97 - September 2021
+1.98.2 - November 2021
+- Intel Core i7 12700H (1.98.2)
+- Improved validation process for Alder Lake records (1.98.2)
+- Improved support for AMD Cezanne 5600G/5700G APUs (1.98.2)
+- AMX instruction set support.
+- AMD 4700S processor.
+
+--------------------------------------------------------------------------------------------------
+1.97 - August 2021
 - Intel Core i9 12900K, Core i7 12700K and Core i5 12600K "Alder Lake" CPUs and Intel Z6xx platform.
 - DDR5 memory SPD and XMP 3.0 support.
 - AMD Radeon 6600XT GPU.
 
 --------------------------------------------------------------------------------------------------
 1.96.1 - May 2021
-- NVIDIA RTX 30 LHR (1.96.1).
 - Intel Iris Xe GPU (DG1) (1.96.1).
 - Improved support of Centaur CHA processor (1.96.1).
 - Preliminary support of Intel Alder Lake and Z6xx platform.
@@ -161,16 +240,16 @@ History
 
 --------------------------------------------------------------------------------------------------
 1.95 - January 2021
-- AMD "Cezanne" and "Lucienne" APUs.
+- LPDDR4 and LPDDR4X memory SPD.
+- AMD Cezanne and Lucienne APUs.
+- AMD ThreadRipper PRO 3995WX, 3975WX, 3955WX, 3945WX and WRX80 chipset.
 - Intel Core 11th generation "Rocket Lake".
 - Mainboard PCI-Express generation report (Mainboard tab).
 - Graphics Interface Link current speed and max speed (Mainboard tab).
 - NVIDIA GPU base and boost clocks (Graphics tab).
 
 --------------------------------------------------------------------------------------------------
-1.94.9 - December 2020
-- AMD Threadripper PRO 3xxx processors (1.94.9).
-- AMD Radeon 6800 & 6800 XT GPUs (1.94.9).
+1.94.8 - November 2020
 - Intel Tiger Lake-U and Tiger Lake-H (1.94.8).
 - Intel Z590 (1.94.8).
 - NVIDIA RTX 3070 GPU (1.94.8).
@@ -184,7 +263,7 @@ History
 - Intel Tiger Lake platform.
 
 --------------------------------------------------------------------------------------------------
-1.92.2 - July 2020
+1.92.2 - June 2020
 - AMD Ryzen 9 3900XT, Ryzen 7 3800XT and Ryzen 5 3600XT (1.92.2).
 - AMD B550 chipset (1.92.2).
 - Hygon processors preliminary support (1.92.2).
@@ -201,6 +280,8 @@ History
 
 --------------------------------------------------------------------------------------------------
 1.90 - August 2019
+- AMD Ryzen 3000 PRO (1.90.1).
+- Intel Comet Lake preliminary support (1.90.1).
 - AMD Ryzen Threadripper 3000 preliminary support.
 - Intel Ice-Lake preliminary support.
 - NVIDIA RTX 2070 and 2080 Super.
@@ -230,7 +311,6 @@ History
 1.86 - August 2018
 - Intel 9th generation Core family (Coffee Lake 9900K, 9700K, 9600K, 9600, 9500 and 9400).
 - Intel Coffee Lake-U processors.
-- AMD Threadripper 2000 processors.
 
 --------------------------------------------------------------------------------------------------
 1.85 - May 2018
@@ -245,23 +325,28 @@ History
 - New "-bench" parameter.
 
 --------------------------------------------------------------------------------------------------
-1.82 - January 2018
-- Windows 10 Build 16299 (1.82.2)
+1.83 - January 2018
+- AMD desktop Raven Ridge APU (AM4).
+- Windows 10 Build 16299.
+
+--------------------------------------------------------------------------------------------------
+1.82 - December 2017
 - AMD Raven Ridge processors support (1.82.1)
 - Intel Xeon Phi Knight Landing preliminary support.
 - Fix BCLK fluctuations on SKL-X.
 - The benchmark does now support systems with more than 64 CPUs.
 
 --------------------------------------------------------------------------------------------------
-1.81.1 - November 2017
+1.81.1 - October 2017
 - Intel Coffee Lake processors and Z370 platform.
 - Intel Skylake-X HCC processors.
 - Intel Xeon Skylake-SP and Xeon W Skylake processors.
 
 --------------------------------------------------------------------------------------------------
-1.80.1 - August 2017
+1.80.2 - September 2017
 - Intel Core X processors (KBL-X and SKL-X).
 - Preferred core(s) display in clocks dialog.
+- Fix 32-bit version issue with Windows 10 builds 16273 and 16275 (1.80.2)
 
 --------------------------------------------------------------------------------------------------
 1.79.1 - May 2017
@@ -270,10 +355,10 @@ History
 - AMD Ryzen 5 and Ryzen 3.
 - Fix lockup at loading on Ryzen systems with RAID.
 - New benchmark version (17.01).
-- New ROG design.
 
 --------------------------------------------------------------------------------------------------
-1.78 - November 2016
+1.78.3 - February 2017
+- AMD Ryzen (1.78.3)
 - Intel Kaby Lake processors.
 - AMD Embedded G and R-series processors.
 - DMP Vortex86 DX3.
@@ -313,6 +398,12 @@ History
 - Added Windows 10 editions.
 
 --------------------------------------------------------------------------------------------------
+1.72.1 - May 2015
+- Intel Skylake and Broadwell support (1.72.1)
+- Preliminary support for Intel Skylake.
+- Fixed support for Windows 10 build 9926.
+
+--------------------------------------------------------------------------------------------------
 1.71.1 - November 2014
 - Intel Core M processors (1.71.1)
 - New CPU-Z logo (1.71.1)
@@ -327,13 +418,14 @@ History
 - TSX instructions set support (including RTM and HLE subparts).
 
 --------------------------------------------------------------------------------------------------
-1.69 - March 2014
+1.69.2 - April 2014
 - Intel Haswell-E processors (1.69.2)
 - Preliminary support for DDR4 memory (1.69.2)
 - AMD FCH detection improved (1.69.2)
 - AMD A6-6420K, A4-6320, A4-4020.
 - AMD Athlon 5350 & 5150, Sempron 3850 & 2650 Kabini.
 - Intel Core i7-4770R and Core i5-4570R Crystal Well.
+- Added graphic card vendor.
 
 --------------------------------------------------------------------------------------------------
 1.68 - January 2014
@@ -345,7 +437,8 @@ History
 
 --------------------------------------------------------------------------------------------------
 1.67.1 - November 2013
-- Improved support of Intel Silvermont.
+- Fix several validations issues (1.67.1).
+- Improved support of Intel Silvermont (Bay Trail).
 - New validation.
 
 --------------------------------------------------------------------------------------------------
@@ -361,14 +454,14 @@ History
 - New version checker.
 
 --------------------------------------------------------------------------------------------------
-1.65 - July 2013
+1.65 - June 2013
 - AMD Opteron X1150 and X2150.
 - AMD FX-9590 and FX-9370.
 - Intel 4xxxHQ "Crystalwell" CPUs.
 - Intel Pentium "Haswell" G3430, G3420, G3220.
 
 --------------------------------------------------------------------------------------------------
-1.64 - May 2013
+1.64 - April 2013
 - Intel Atom Cloverview.
 - Intel Ivy Bridge-E/EP/EX.
 - AMD Richland APUs.
@@ -389,17 +482,22 @@ History
 - Improved validation process.
 
 --------------------------------------------------------------------------------------------------
-1.61.3 - July 2012
+1.61 - July 2012
+- Fix wrong clock speed report (1.61.3).
 - Intel CedarTrail platform.
 - VIA VX11 chipset.
 - Intel Xeon E5 processors.
 - Fix wrong CPU clock speed under Win8.
 
 --------------------------------------------------------------------------------------------------
-1.59.2 - January 2012
+1.60 - March 2012
 - Intel Core i5 2550K, 2450P and 2380P with no GPU.
-- Intel Ivy Bridge models (37xx, 35xx, 34xx and 33xx).
+- Intel Core i3/i5/i7 "Ivy Bridge" (37xx, 35xx, 34xx, 33xx, 32xx).
+- Intel Xeon E3 (SandyBridge-WS).
 - Intel Z77 platform.
+- AMD FX-8140, FX-4150.
+- AMD "Trinity" APU Preliminary support.
+- Windows 32/64-bit information.
 
 --------------------------------------------------------------------------------------------------
 1.59 - November 2011
@@ -411,20 +509,19 @@ History
 - Support for Windows 8.
 
 --------------------------------------------------------------------------------------------------
-1.58.4 - September 2011
+1.58 - June 2011
 - AMD FX "Bulldozer" processors family (K15).
 - AMD Llano processors family (K12).
-- Intel Sandy Bridge-E/EP processors.
+- Intel Sandy Bridge-EP processors preliminary support.
 
 --------------------------------------------------------------------------------------------------
-1.57.2 - March 2011
-- Asus Rampage III Black Edition.
-- Added TDP and southbridge revision.
-
---------------------------------------------------------------------------------------------------
-1.57.1 - January 2011
-- Improved support of Sandy Bridge processors.
-- Bug fixes.
+1.57 - February 2011
+- Intel Xeon "Westmere-EX" support.
+- GPU frequency report on Intel Sandy Bridge processor.
+- AMD Zacate/Ontario processors support.
+- Report TDP on main page when available.
+- Cores clocks on floating menu.
+- P67/H67 stepping report.
 
 --------------------------------------------------------------------------------------------------
 1.56 - October 2010
