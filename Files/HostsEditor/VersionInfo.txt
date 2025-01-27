@@ -1,6 +1,14 @@
 Author: BlueLife , Velociraptor
 www.sordum.org
 
+[010101010101010101]--BlueLife Hosts Editor v1.5--[010101010101010101]
+(Friday, 26. Mai 2023)
+
+What is new:
+1. [ Fixed ] - The mouse cursor appears incorrectly on the scroll bar in the text view feature
+2. [ Fixed ] - Add exclusions to Windows Defender feature doesn't work
+3. [ Added ] - Some code Improvements
+
 [010101010101010101]--BlueLife Hosts Editor v1.4--[010101010101010101]
 (Thursday, 3. November 2022)
 
