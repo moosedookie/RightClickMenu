@@ -1,15 +1,19 @@
-Changes in 5.1.8 (158) 
-  Bugfix:  Some PNG files were no longer being displayed
-Changes in 5.1.8
-  Added:   Zooming/scrolling views of image resources
-  Update:  Enabled scrolling for very tall dialogs
-  Bugfix:  Very large binary resources (>>100Mb) could crash the hex editor
-  Bugfix:  Occasional bug decompiling dialogs styles (WS_TABSTOP)
-  Bugfix:  RC file missing when extracting a binary resource type from commandline
-Changes in 5.1.7
-  Bugfix:  incorrect editor fonts when displaying multibyte characters
-  Added:   support for multi-line comments /* ... */
-  Update:  internal links in context help
+Changes in 5.2.7
+  fixed minor bugs in commandline scripts
+Changes in 5.2.6
+  fixed a bug incorrectly detecting text encoding
+  fixed several other minor bugs
+Changes in 5.2.5
+  fixed messagebox dialogs missing icons
+  added a scale slider to the image viewer (right-click)
+  fixed crash when changing view from an animated gif to another resource 
+Changes in 5.2.4
+  additional bug fixes related to overflow checking
+Changes in 5.2.3
+  fixed an occasional overflow error bug when saving file 
+Changes in 5.2.1
+  minor bug fixes
+  Compiled with Delphi 11 (now with overflow checking).
 Changes in 5.1.6
   Bugfix:  Fixed broken Accelerator compiling.
 Changes in 5.1.6

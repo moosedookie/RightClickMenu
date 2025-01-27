@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Resource Hacker</title>
-  <STYLE type="text/css"><!-- 
+<STYLE type="text/css"><!-- 
     body  {
 	  BACKGROUND-COLOR: #E5E2E5;
       text-align: center;
@@ -45,9 +45,19 @@
 	strong {color: #46845F;} 
 	.smallfont {font-size: 0.7em;}
 	
-  --></STYLE>
+--></STYLE>
 	<meta name="viewport" content="device-width, initial-scale=1">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX7LDPJNPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZX7LDPJNPT');
+</script>
 
 <body>
 <div align="center">
@@ -58,14 +68,16 @@
 ... a freeware resource compiler &amp; decompiler for Windows&reg; applications
 </div><br>
 
-<strong>Version 5.1.1</strong><br>
-Last updated: 29 June 2018<br>
-Copyright &copy; 1999-2018 Angus Johnson<br>
+<strong>Version 5.2.6</strong><br>
+Last updated: 18 November 2023<br>
+Copyright &copy; 1999-2023 Angus Johnson<br>
+awj1958@gmail.com<br>
 <span class="maroon">Freeware - no nags, no ads and fully functional.</span><br>
+<a href="#download">Download</a><br><br>
 
 <h3>Overview:</h3>
 
-Resource Hacke<SUP><FONT SIZE="-1">TM</FONT></SUP> is a resource editor for 32bit and 64bit Windows&reg; applications. It's both a <strong>resource compiler</strong> (for *.rc files), and a <strong>decompiler</strong> - enabling viewing and editing of resources in executables (*.exe; *.dll; *.scr; etc) and compiled resource libraries (*.res, *.mui). While Resource Hacker is primarily a GUI application, it also provides many options for compiling and decompiling resources from the command-line.<br><br>
+Resource Hacker<SUP><FONT SIZE="-1">TM</FONT></SUP> is a resource editor for 32bit and 64bit Windows&reg; applications. It's both a <strong>resource compiler</strong> (for *.rc files), and a <strong>decompiler</strong> - enabling viewing and editing of resources in executables (*.exe; *.dll; *.scr; etc) and compiled resource libraries (*.res, *.mui). While Resource Hacker is primarily a GUI application, it also provides many options for compiling and decompiling resources from the command-line.<br><br>
 
 <!-- <img src="bm00.png" width="985" height="651" alt=""><br><br> -->
 <img src="rh_dlg_edit.png" width="791" height="514" alt="Resource Hacker"><br><br>
@@ -79,7 +91,7 @@ Compiling can be initiated either by opening an existing resource script file, o
 A complete list of Resource-Definition Statements can be found <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa381043(v=vs.85).aspx">here</a>.<br><br>
 
 Additional features of Resource Hacker's compiler include: The #INCLUDE directive (to access definition statements in header files etc) can be nested to multiple levels, as can the #IF, and #IFDEF directives.
-#DEFINE, #UNDEF, #IF, #ELIF, #ELSE, #IFDEF, #IFNDEF, #INCLUDE, and #PRAGMA directives are all supported. Strings, between double-quote (") characters, may contain typical 'C' style backslashed 'escaped' characters  — \t , \n , \\ , \" , \x, \u and \377 (octal). A double-quote within a string must be 'escaped' using either a preceding backslash or with another double-quote. Script comments are preceded either by double forward-slashes (//) or by a semi-colon (;). Filenames with relative paths are allowed. Filenames that contain spaces must be enclosed within double-quote characters.<br><br>
+#DEFINE, #UNDEF, #IF, #ELIF, #ELSE, #IFDEF, #IFNDEF, #INCLUDE, and #PRAGMA directives are all supported. Strings, between double-quote (") characters, may contain typical 'C' style backslashed 'escaped' characters  &#8212; \t , \n , \\ , \" , \x, \u and \377 (octal). A double-quote within a string must be 'escaped' using either a preceding backslash or with another double-quote. Script comments are preceded either by double forward-slashes (//) or by a semi-colon (;). Filenames with relative paths are allowed. Filenames that contain spaces must be enclosed within double-quote characters.<br><br>
 
 Compiler error messages are reported, even errors nested within INCLUDE statements ...<br>
 <img src="rh_scrpt_err.png" width="803" height="478" alt=""><br><br>
@@ -118,7 +130,7 @@ Command-line instructions are a combination of switch statements followed by swi
 </tr>
 <tr>
 	<td valign="top">-save</td><td>&nbsp;</td>
-	<td>filename - the new name of the modified or newly created file, either a modified opened file or an extracted resource</td>
+	<td>usually a filename for the new or modified file, but can also be a folder when extracting multiple resources</td>
 </tr>
 <tr>
 	<td valign="top">-resource</td><td>&nbsp;</td>
@@ -128,13 +140,14 @@ Command-line instructions are a combination of switch statements followed by swi
 	<td valign="top">-action</td><td>&nbsp;</td>
 	<td>action to be performed on the opened file<br>
 	<ul style="margin: .6em 0 .2em 1em; padding: 0px; list-style: outside;">
-	<li><strong>add</strong>          - add a resource, but fails if it already exists
-	<li><strong>addoverwrite</strong> - add a resource, and overwriting if it already exists
-	<li><strong>addskip</strong> 	 - add a resource, but skipping if it already exists
-	<li><strong>compile</strong>      - compiles a resource script file (*.rc) to a binary resource file (*.res)
-	<li><strong>delete</strong>       - delete a resource
-	<li><strong>extract</strong>      - extract a resource
-	<li><strong>modify</strong>       - modify a resource
+		<li><strong>add</strong>          - add a resource, but fails if it already exists
+		<li><strong>addoverwrite</strong> - add a resource, and overwriting if it already exists
+		<li><strong>addskip</strong> 	 - add a resource, but skipping if it already exists
+		<li><strong>compile</strong>      - compiles a resource script file (*.rc) to a binary resource file (*.res)
+		<li><strong>delete</strong>       - delete a resource
+		<li><strong>extract</strong>      - extract a resource
+		<li><strong>modify</strong>       - modify a resource
+		<li><strong>changelanguage(langID)</strong> - changes the language of ALL resources
 	</ul>	
 	</td>
 </tr>
@@ -183,14 +196,14 @@ reshack_add_icon_to_old.bat:
 <pre>
 rh.exe -open old.exe -save new.exe -action addskip -res my.ico -mask ICONGROUP,MAINICON,</pre><br>
 
-reshack_extract_icon_from_source.bat:
+reshack_extract_all_source_icons_to_icons_folder.bat:
 <pre>
-rh.exe -open source.exe -save icons.ico -action extract -mask ICONGROUP,MAINICON, -log CON
+rh.exe -open source.exe -save .\icons -action extract -mask ICONGROUP,, -log CON
 @pause</pre><br>
 
-reshack_extract_all_icons_from_source.bat:
+reshack_extract_all_dialogs.bat:
 <pre>
-rh.exe -open source.exe -save savedicons.rc -action extract -mask ICONGROUP,, -log rh.log</pre><br>
+rh.exe -open source.exe -save .\dialogs.rc -action extract -mask DIALOG,, -log rh.log</pre><br>
 
 reshack_execute_my_script.bat:
 <pre>
@@ -217,8 +230,9 @@ Resource Hacker Scripts are text files with the following format:<br><br>
   -addoverwrite SourceFile, ResourceMask
   -addoverwrite SourceFile, ResourceMask
   -modify       SourceFile, ResourceMask
-  -extract      TargetFile, ResourceMask
-  -delete       ResourceMask</pre><br>
+  -extract      TargetFile or TargetFolder, ResourceMask
+  -delete       ResourceMask
+  -changelanguage(langID)</pre><br>
 	
 Note: Filenames that include spaces must be enclosed within double quotes.<br><br>
 
@@ -271,7 +285,7 @@ rh_script_myprog_upd_all.txt -
 
 
 <h3>&quot;Packed&quot; or &quot;Compressed&quot; Executables:</h3>
-Some executable files are &quot;packed&quot; or &quot;compressed&quot; using compression algorithms once they've been compiled. This reduces their file size and it also makes it marginally more difficult to view and modify resources. I suspect this 'hiding' of resources is (or was) the prevailing objective of this process. Consequently, while it's generally not difficult to reverse engineer this 'packing' process too, in deference to these authors, I've chosen not to do this with Resource Hacker. As a side note, &quot;packed&quot; executables have become quite uncommon over the last 5-10 years. A large part of this is because executables are now almost always compressed within installers or ZIP packages. But software authors also seem to be exposing more, rather than less information in their executable files' resource sections. I suspect that earlier concerns about the loss of intellectual property with reversed engineering have finally been allayed.<BR><BR><br>
+Some executable files are "packed" or "compressed" using compression algorithms. Not only does this reduces file size, it also makes viewing and modifying resources marginally more difficult. I suspect that this resource 'hiding' is (or was) a common objective in this process. Anyhow, in deference to these authors, I've chosen not to unpack files with Resource Hacker. As a side note, it seems that "packed" executables have become quite uncommon over the last 5-10 years, and software authors are exposing more rather than less information in executable resources. I suspect that earlier concerns about the loss of intellectual property with reverse engineering have been allayed.<BR><BR><br>
 
 
 <h3>Licence to Use - Terms and Conditions:</h3>
@@ -285,22 +299,19 @@ This Resource Hacker<SUP><FONT SIZE="1">TM</FONT></SUP> software is released as 
 	
 The above licence terms constitute "copyright management information" within the meaning of Section 1202 of Title 17 of the United States Code and must not be altered or removed from the licensed works. Their alteration or removal from the licensed works, and the distribution of licensed works without all the above licence terms in an unaltered way, may contravene Section 1202 and give rise civil and/or criminal consequences.<br><br><br>
 
+<A name="download"></A>
+<h3>Download version 5.2.6:</h3>
 
-<strong>Changes since version 5.1.0:</strong>
+<A href="reshacker_setup.exe" >EXE install</A> (4.1MB)<br><br>
+<A href="resource_hacker.zip" >ZIP install</A> (3.3MB)<br><br><br>
+
+<strong>Changes in 5.2.6:</strong>
 <ul>
-    <li class="indent">Bugfix:  incorrect editor fonts when displaying multibyte characters
-    <li class="indent">Bugfix:  compiler mishandled hex. escape chars with ambiguous trailing text.    
-    <li class="indent">Bugfix:  incorrect handling of #define directive
-    <li class="indent">Bugfix:  incorrect handling of statusbar alignment in dialog resources
-    <li class="indent">Bugfix:  line numbering broken when swapping between editing and binary views
-    <li class="indent">Bugfix:  relative paths in filenames was broken
-    <li class="indent">Bugfix:  incorrect error reporting while parsing some #include files
-    <li class="indent">Bugfix:  extracting resources using commandline scripts was buggy.
-    <li class="indent">Added:   added support for multi-line comments /* ... */
-    <li class="indent">Updated: can now open and save non-resource type text files
-    <li class="indent">Updated: context help improved     
+    <li class="indent">fixed a bug incorrectly detecting text encoding</li>
+    <li class="indent">fixed several other minor bugs</li>
 </ul><br><br>
 
+                 
 </div> </div><!-- outer most formatting-->
 </body>
 </html>
