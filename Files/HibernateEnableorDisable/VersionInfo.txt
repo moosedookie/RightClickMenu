@@ -1,6 +1,27 @@
 Author: BlueLife , Velociraptor
 www.sordum.org
 
+############--Hibernate Enable or Disable v1.5--############
+(Thursday, 9. May 2024)
+
+Changelog:
+
+1. [ Added ] - /Q Parameter support For Hibernate state checking
+2. [ Added ] - Power button settings link under the Menu button
+3. [ Added ] - Some code Improvements
+
+---------------------------------------------------------------
+
+############--Hibernate Enable or Disable v1.4--############
+(Thursday, 8. February 2024)
+
+Changelog:
+
+1. [ Added ] - /Auto parameter (Hibernate off if drive is SSD, on if not)
+2. [ Added ] - Some code Improvements
+
+---------------------------------------------------------------
+
 ############--Hibernate Enable or Disable v1.3--############
 (Thursday, 4. November 2021)
 
