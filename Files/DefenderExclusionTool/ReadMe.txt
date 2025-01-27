@@ -1,6 +1,17 @@
 Author: BlueLife, Velociraptor
 www.sordum.org
 
+####################--Defender Exclusion Tool v1.4--####################
+
+What is new: (Tuesday, 27 August 2024)
+
+1. [Fixed] – The file on the network drive could not be added.
+2. [Added] – Options to add or remove a process, extension and IP address.
+3. [Added] – Sorting by columns feature.
+4. [Added] – Ability to restore backup list by dragging and dropping.
+5. [Added] – Icons on the interface have been enlarged.
+6. [Added] – Many code improvements.
+
 ####################--Defender Exclusion Tool v1.3--####################
 
 Thursday, 09. September 2021 , What is New
