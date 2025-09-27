@@ -1,6 +1,14 @@
 Author: BlueLife , Velociraptor
 www.sordum.org
 
+[010101010101010101]--BlueLife Hosts Editor v1.6--[010101010101010101]
+(Wednesday, 5. February 2025)
+
+What is new:
+1. [ Fixed ] - Mouse cursor bugs fixed.
+2. [ Added ] - Program coding improvements.
+
+
 [010101010101010101]--BlueLife Hosts Editor v1.5--[010101010101010101]
 (Friday, 26. Mai 2023)
 
